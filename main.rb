@@ -1,7 +1,4 @@
-require './Player.rb'
-require './MathGame.rb'
+require './MathGame'
 
-player = Player.new
-puts player.lives
-player.lose_life
-puts player.lives
+game = MathGame.new
+game.play
