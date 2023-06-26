@@ -1,5 +1,5 @@
 Class Player
-  attr_accesor: lives
+  attr_accessor :lives
 
   def initialize
     @lives = 3
