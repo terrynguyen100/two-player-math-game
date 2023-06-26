@@ -14,7 +14,8 @@ class MathGame
   def generate_question
     num1 = rand(1..20)
     num2 = rand(1..20)
-    [num1, num2]
+    puts "Player #{@current_player + 1}: What does #{num1} plus #{num2} equal?"
+    num1 + num2
   end
 
   def game_over
@@ -24,10 +25,17 @@ class MathGame
   def play
     puts "----- GAME START -----"
     until game_over
+      puts ""
       puts "----- NEW TURN -----"
-      num1, num2 = generate_question
-      puts num1
-      puts num2
+      question_answer = generate_question
+      answer = gets.chomp.to_i
+
+      if answer == question_answer
+        puts "Player #{@current_player + 1}: YES! You are correct"
+      else
+        puts "Player #{@current_player + 1}: NO! You are wrong"
+      end
+      
       switch_player
       @players[@current_player].lose_life
     end
