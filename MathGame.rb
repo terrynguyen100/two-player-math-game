@@ -1,6 +1,6 @@
 require './Player.rb'
 
-Class MathGame
+class MathGame
 
   def initialize
     @players = [Player.new, Player.new]
@@ -8,6 +8,6 @@ Class MathGame
   end
 
   def play
-    
+
   end
 end
